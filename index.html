@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>Street Plan Viewer</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" href="favicon.ico">
+	<link rel="icon" type="image/ico" href="favicon.ico">    
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-responsive.min.css">
+    <link rel="stylesheet" href="http://js.arcgis.com/3.10/js/esri/css/esri.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<!--[if lt IE 8]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+	<div id="disclaimer" class="modal hide fade">
+	  <div class="modal-header">
+	    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	    <h3>Disclaimer</h3>
+	  </div>
+	  <div class="modal-body">
+	    <p>The City of Raleigh makes every effort to produce and publish the most current and accurate information possible.  However, the maps are produced for informational purposes, and are <strong>NOT</strong> surveys.  No warranties, expressed or implied, are provided for the data therein, its use, or its interpretation.</p>
+	  </div>
+	  <div class="modal-footer">
+	    <a href="#" class="btn" data-dismiss="modal">Close</a>
+	  </div>
+	</div>
+    <div class="navbar">
+	    <div class='navbar-inner'>
+	    	<div class='nav pull-left'>
+		        <img src='img/city-seal.png' style='height:50px;float:left; padding-right:15px' alt="Seal"/>
+		        <div id="title" style='float:right'>
+			        <span>RALEIGH, NORTH CAROLINA</span>
+			        <h4>STREET PLAN VIEWER</h4>
+		        </div>
+	    	</div>
+	    	<div class='nav pull-right'>
+	    		<p>Search By Address</p>
+	    		<div class='input-prepend'>
+					<span class="add-on"><i class="icon-search"></i></span>
+					<input type='text' class='typeahead' data-provide='typeahead' placeHolder='222 West Hargett Street'/>	
+	    		</div>
+	    	</div>
+	    </div>
+    </div>
+	<div class='container-fluid'>
+		<div class='row-fluid'>
+			<div class='span9'>
+				<div id='map'></div>
+			</div>
+			<div class="span3">
+				<h5>LEGEND</h5>
+				<div id='legend' class='legend'></div>
+			</div>
+
+		</div>
+	</div>
+	<div class='footer'>
+		<div class="container">
+			<ul class="footer-links">
+				<li><a href="http://www.raleighnc.gov/business/content/PlanCurrent/Articles/NewRaleighCode.html" target="_blank">Unified Development Ordinance</a></li>
+				<li class="muted">·</li>
+				<li><a href="http://www.raleighnc.gov/content/PlanCurrent/Documents/DevelopmentPlansReview/NewRaleighCode/StreetTypologyMapDraft.pdf" target="_blank">Street Typology Map</a></li>
+				<li class="muted">·</li>
+				<li><a href="#disclaimer" data-toggle="modal">Disclaimer</a></li>
+			</ul>
+			<p>Designed and developed by the City of Raleigh <a href="http://www.raleighnc.gov/business/content/ITechAdmin/Articles/GeographicInformationServices.html" target="_blank">Geographic Information Systems</a> Division</p>
+			<p>Data developed by the City of Raleigh <a href="http://www.raleighnc.gov/business/content/Departments/Articles/PlanningandDevelopment.html" target="_blank">Planning and Development</a> Department</p>
+			<br/>
+			<p>Map tiles by <a href="http://stamen.com">Stamen Design</a>, under <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a>. Data by <a href="http://openstreetmap.org">OpenStreetMap</a>, under <a href="http://creativecommons.org/licenses/by-sa/3.0">CC BY SA</a>.</p>
+		</div>
+	</div>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+ 	<script>var dojoConfig = { parseOnLoad:true };</script>
+  	<script src="http://js.arcgis.com/3.10/"></script>
+    <script src="js/main.js"></script>
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-11110258-20', 'raleighnc.gov');
+	  ga('send', 'pageview');
+
+	</script>
+</body>
